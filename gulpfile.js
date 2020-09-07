@@ -135,6 +135,4 @@ function watchThese(){
 
 
 //------------------------ Exporterar -----------------------
-  exports.watchThese = watchThese;
-  exports.buildSite = buildSite;
   exports.default = gulp.parallel(buildSite, watchThese);

@@ -21,7 +21,7 @@ footer p{
 /* Header section */
 header{
     display:block;
-    background-image: url('../images/bild5.jpg');
+    background-image: url('/images/bild5.jpg');
     background-size: cover;
     background-position: center;
     width:100%;
