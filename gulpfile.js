@@ -74,15 +74,6 @@ function cssMinify(){
   return gulp.src('./src/css/style.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./pub/css'));
-
-
-    return src(cssPath)
-     .pipe(sourcemaps.init())
-     .pipe(concat('main.css'))
-     .pipe(postcss([autoprefixer(), cssnano()]))
-     .pipe(sourcemaps.write('.')
-     .pipe(dest('publish/css')));
-
 };
 //---------------------
 
@@ -94,8 +85,6 @@ function jsConcat(){
   return gulp.src('./src/js/**/!(main.js)')
     .pipe(concat('main.js'))
     .pipe(gulp.dest('./src/js/'));
-
-  
 };
 //---------
 // Minifierar js till en mindre fil och lägger den i public-mappen
