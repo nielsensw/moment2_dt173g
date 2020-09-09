@@ -74,6 +74,15 @@ function cssMinify(){
   return gulp.src('./src/css/style.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./pub/css'));
+
+
+    return src(cssPath)
+     .pipe(sourcemaps.init())
+     .pipe(concat('main.css'))
+     .pipe(postcss([autoprefixer(), cssnano()]))
+     .pipe(sourcemaps.write('.')
+     .pipe(dest('publish/css')));
+
 };
 //---------------------
 
@@ -133,6 +142,6 @@ function watchThese(){
  };
 //----------------------------------------------------------------------
 
-
 //------------------------ Exporterar -----------------------
-  exports.default = gulp.parallel(buildSite, watchThese);
+
+exports.default = gulp.parallel(buildSite, watchThese);
